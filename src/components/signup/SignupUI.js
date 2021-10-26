@@ -52,7 +52,7 @@ const SignupUI = (props) => {
             onSubmit={onSubmit}
             SignupForm={SignupForm}
             onClick={onClick}
-            passwordRules={passwordRules}
+            passwordRules={{ ...passwordRules, passwordPolicy: "fair" }}
             PasswordPolicyState={PasswordPolicyState}
             isValid={isValid}
             SignupError={SignupError}
