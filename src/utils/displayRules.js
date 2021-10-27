@@ -1,5 +1,6 @@
 import Rules from "./Rules";
 export const DisplayRules = ({ passwordRules, PasswordPolicyState }) => {
+
     const ruleMap =
         passwordRules &&
         Rules({

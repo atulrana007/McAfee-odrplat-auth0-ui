@@ -29,43 +29,44 @@ const Login = (props) => {
   return (
     <div className="LoginWrapperContainer">
       <form className="LoginInputWrapper">
-        <>
-          <div className="LoginInputContainer">
-            {LoginForm.email !== "" ? (
-              <div className="LoginInputLabel">{translate("emailAddress")}</div>
-            ) : null}
-            <div
-              style={{
-                flex: 1,
-                display: "flex",
-                border:
-                  LoginError.isEmailError === true
-                    ? "2px solid red"
-                    : LoginError.isEmailError === false
-                    ? "2px solid green"
-                    : "",
-                backgroundColor: "#ffff",
-                borderRadius: "1rem",
-              }}
-            >
-              <AiOutlineMail className="LoginInputLogo" />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={LoginForm.email}
-                placeholder="Email"
-                className="LoginInput"
-                onChange={onChange}
-              />
+        {!switchLogin && (
+            <div className="LoginInputContainer">
+              {LoginForm.email !== "" ? (
+                <div className="LoginInputLabel">
+                  {translate("emailAddress")}
+                </div>
+              ) : null}
+              <div
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  border:
+                    LoginError.isEmailError === true
+                      ? "2px solid red"
+                      : LoginError.isEmailError === false
+                      ? "2px solid green"
+                      : "",
+                  backgroundColor: "#ffff",
+                  borderRadius: "1rem",
+                }}
+              >
+                <AiOutlineMail className="LoginInputLogo" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={LoginForm.email}
+                  placeholder="Email"
+                  className="LoginInput"
+                  onChange={onChange}
+                />
+              </div>
             </div>
-          </div>
-        </>
-
+        )}
         {LoginError.email && <div className="Error">{LoginError.email}</div>}
         {!switchLogin && (
           <>
-            <div className="LoginInputContainer">
+            <div className="LoginPasswordContainer">
               {LoginForm.password !== "" ? (
                 <div className="LoginInputLabel">{translate("password")}</div>
               ) : null}
@@ -87,6 +88,7 @@ const Login = (props) => {
                 />
               </div>
             </div>
+            <div className="forgotPasswordContainer"><p className="forgotPassword">Forgot password?</p></div>
           </>
         )}
         {switchLogin && LoginForm.otpAvailable && (

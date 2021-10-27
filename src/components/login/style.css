@@ -61,15 +61,19 @@
     display: flex;
     flex-direction: column;
 }
-.LoginInputContainer {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid RGB(212, 213, 219);
-    border-radius: 1rem;
-    box-shadow: inset 0 2px 2px 0 rgb(0 0 0 / 5%);
-    margin: 1rem 0;
+.LoginInputContainer, .LoginPasswordContainer {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid RGB(212, 213, 219);
+  border-radius: 1rem;
+  box-shadow: inset 0 2px 2px 0 rgb(0 0 0 / 5%);
+  margin: 1rem 0;
+
+}
+.LoginPasswordContainer {
+  margin: 1rem 0rem 0.5rem 0rem;
 }
 .LoginInputLabel {
     flex: 1;
@@ -248,4 +252,15 @@ input:-webkit-autofill {
 .page-link:focus {
     border: none;
     outline: none;
+}
+.forgotPasswordContainer{
+  height: 20px;
+  margin-bottom: 1rem;
+}
+.forgotPassword{
+  margin: 0px;
+  color: #1671EE;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
 }
