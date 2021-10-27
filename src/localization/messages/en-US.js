@@ -37,6 +37,10 @@ const en = {
         Already_have_a_account: "Already have a account ?",
         confirm_password: "Confirm Password",
         Request_one_time_passcode: "Request one-time passcode",
+        ACT0104:
+            "Your account has been blocked after multiple consecutive login attempts. We’ve sent you an email with instructions on how to unblock it.",
+        ACT0105:
+            "Your account has been blocked after multiple consecutive login attempts. We’ve sent you an email with instructions on how to unblock it.",
     },
 };
 export default en;

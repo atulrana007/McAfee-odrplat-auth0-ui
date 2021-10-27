@@ -101,15 +101,15 @@ export default function LoginContainer(props) {
                     isSubmitting: false,
                 });
             } catch (err) {
-                console.log(err);
+                console.log(err, err?.code ?? err?.code);
                 setLoginForm({
                     ...LoginForm,
                     isSubmitting: false,
                 });
                 setLoginError({
                     ...LoginError,
-                    databaseError: err.description,
-                    errorCode: err.code,
+                    databaseError: err?.description,
+                    errorCode: err?.code ?? err.message,
                 });
             }
         } else {
@@ -132,15 +132,15 @@ export default function LoginContainer(props) {
                     });
                 }
             } catch (err) {
-                console.log(err);
+                console.log(err, err?.code ?? err?.code);
                 setLoginForm({
                     ...LoginForm,
                     isSubmitting: false,
                 });
                 setLoginError({
                     ...LoginError,
-                    databaseError: err.description,
-                    errorCode: err.code,
+                    databaseError: err?.description,
+                    errorCode: err?.code ?? err?.message,
                 });
             }
         }
@@ -157,8 +157,8 @@ export default function LoginContainer(props) {
             console.log(err);
             setLoginError({
                 ...LoginError,
-                databaseError: err.description,
-                errorCode: err.code,
+                databaseError: err?.description,
+                errorCode: err?.code ?? err?.message,
             });
         }
     };

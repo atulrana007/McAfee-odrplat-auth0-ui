@@ -20,9 +20,6 @@ function useQuery() {
 
 const App = ({ pageConfig }) => {
     const parsedHash = new URLSearchParams(window.location.hash.substr(1));
-    if (useLocation().pathname === "/login") {
-        sessionStorage.setItem("params", useLocation().search);
-    }
 
     let query = useQuery();
     let locale = useRef("");
@@ -52,7 +49,10 @@ const App = ({ pageConfig }) => {
         <CommonDataProvider config={pageConfig}>
             <AppProvider>
                 <LanguageProvider locale={locale.current}>
-                    <AccountProvider config={pageConfig}>
+                    <AccountProvider
+                        config={pageConfig}
+                        locale={locale.current}
+                    >
                         <div id="app" className="d-flex flex-column h-100">
                             <div className="container flex-grow-1">
                                 <div className="mt-5">

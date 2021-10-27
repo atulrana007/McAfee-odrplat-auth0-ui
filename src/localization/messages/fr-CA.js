@@ -39,6 +39,10 @@ const fr = {
         Already_have_a_account: "Vous avez déjà un compte ?",
         confirm_password: "Confirmez le mot de passe",
         Request_one_time_passcode: "Demander un mot de passe à usage unique",
+        ACT0104:
+            "Votre compte a été bloqué après plusieurs tentatives de connexion consécutives. Nous vous avons envoyé un e-mail avec des instructions sur la façon de le débloquer",
+        ACT0105:
+            "Votre compte a été bloqué après plusieurs tentatives de connexion consécutives. Nous vous avons envoyé un e-mail avec des instructions sur la façon de le débloquer",
     },
 };
 export default fr;
