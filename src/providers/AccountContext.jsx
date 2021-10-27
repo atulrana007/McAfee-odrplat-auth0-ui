@@ -15,7 +15,6 @@ const AccountProvider = (props) => {
     const storeUserData = (data) => {
         localStorage.setItem("userData", JSON.stringify(data));
     };
-    console.log("configs", props);
     const webAuth = new auth0.WebAuth({
         domain: props.config.auth0Domain,
         clientID: props.config.clientID,

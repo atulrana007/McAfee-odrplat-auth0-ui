@@ -56,7 +56,6 @@ export default function SignupContainer(props) {
                 });
             }
         } else {
-            console.log("enter details");
         }
     };
 

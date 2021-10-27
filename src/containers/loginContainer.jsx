@@ -101,14 +101,6 @@ export default function LoginContainer(props) {
                     isSubmitting: false,
                 });
             } catch (err) {
-                console.log(
-                    "ankit ",
-                    err,
-                    "\n",
-                    err?.code,
-                    "\n ",
-                    err?.message
-                );
                 setLoginForm({
                     ...LoginForm,
                     isSubmitting: false,
@@ -140,14 +132,6 @@ export default function LoginContainer(props) {
                     });
                 }
             } catch (err) {
-                console.log(
-                    "ankit ",
-                    err,
-                    "\n",
-                    err?.code,
-                    "\n ",
-                    err?.message
-                );
                 setLoginForm({
                     ...LoginForm,
                     isSubmitting: false,
