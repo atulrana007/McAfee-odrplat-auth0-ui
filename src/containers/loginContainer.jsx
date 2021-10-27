@@ -101,8 +101,14 @@ export default function LoginContainer(props) {
                     isSubmitting: false,
                 });
             } catch (err) {
-                console.log("ankit ", err?.code, err?.message);
-                console.log(err, err?.code ?? err?.code);
+                console.log(
+                    "ankit ",
+                    err,
+                    "\n",
+                    err?.code,
+                    "\n ",
+                    err?.message
+                );
                 setLoginForm({
                     ...LoginForm,
                     isSubmitting: false,
@@ -110,7 +116,8 @@ export default function LoginContainer(props) {
                 setLoginError({
                     ...LoginError,
                     databaseError: err?.description,
-                    errorCode: err?.code ?? err.message,
+                    errorCode:
+                        err?.code === null ? err.original.message : err?.code,
                 });
             }
         } else {
@@ -133,7 +140,14 @@ export default function LoginContainer(props) {
                     });
                 }
             } catch (err) {
-                console.log(err, err?.code ?? err?.code);
+                console.log(
+                    "ankit ",
+                    err,
+                    "\n",
+                    err?.code,
+                    "\n ",
+                    err?.message
+                );
                 setLoginForm({
                     ...LoginForm,
                     isSubmitting: false,
