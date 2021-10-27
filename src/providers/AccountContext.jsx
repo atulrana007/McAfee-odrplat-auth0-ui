@@ -55,6 +55,10 @@ const AccountProvider = (props) => {
     const SignupWithPassword = (email, password) => {
         const userMetadata = {
             lang: locale,
+            dictionary: {
+                welcome_to: "welcome to",
+                welcome_in_french: "abcd",
+            },
         };
         return new Promise((resolve, reject) => {
             const variables = {
