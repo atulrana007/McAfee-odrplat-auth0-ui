@@ -26,6 +26,7 @@ const Login = (props) => {
     utagdata["tm_global_navigation_element_click"] = "true";
     utag.link(utagdata);
   };
+  console.log(translate("emailAddress"));
   return (
     <div className="LoginWrapperContainer">
       <form className="LoginInputWrapper">

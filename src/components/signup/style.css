@@ -1,10 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,600;0,800;1,700&display=swap");
 .SignupWrapper {
-  position: absolute;
-  top: 2rem;
-  left: 4rem;
-  right: 0;
-  bottom: 0;
+  margin-top: 2rem;
+  margin-left: 4rem;
   display: flex;
   flex-direction: row;
 }
@@ -177,7 +174,7 @@
 .cancel {
   height: 2rem;
   width: 2rem;
-  color: rgb(228, 57, 57);
+  color: rgb(185, 70, 70);
 }
 .page-link {
   color: blue;
@@ -200,4 +197,34 @@
   font-family: inherit;
   font-size: 1.5rem;
   align-items: center;
+}
+
+.loaderWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.loaderLogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+.loader-creating-your-account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.loading-logo {
+  height: 5rem;
+  width: 5rem;
+  margin-bottom: 1rem;
+}
+.loading-text {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
 }
