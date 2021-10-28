@@ -1,17 +1,11 @@
 import React, { useContext, useState } from "react";
 import { AccountContext } from "../providers/AccountContext";
+import { CommonDataContext } from "../providers/CommonDataContext";
 export default function LoginContainer(props) {
   const [loader, setLoader] = useState(false);
   const { loginWithPassword, otpLogin, otpStart, getSocialLogin } =
     useContext(AccountContext);
-
-  const [LoginForm, setLoginForm] = useState({
-    email: "",
-    password: "",
-    otp: "",
-    otpAvailable: false,
-    isSubmitting: false,
-  });
+  const { LoginForm, setLoginForm } = useContext(CommonDataContext);
   const [LoginError, setLoginError] = useState({
     email: "",
     isEmailError: "",
@@ -115,6 +109,7 @@ export default function LoginContainer(props) {
           errorCode: err?.code === null ? err.original.message : err?.code,
         });
       }
+      setLoader(false);
     } else {
       try {
         if (LoginForm.otpAvailable) {
@@ -147,8 +142,8 @@ export default function LoginContainer(props) {
           errorCode: err?.code ?? err?.message,
         });
       }
+      setLoader(false);
     }
-    setLoader(false);
   };
   const getOtp = async (e) => {
     try {

@@ -4,6 +4,7 @@ import Signup from "./Signup";
 import "./style.css";
 import translate from "../../localization/translate";
 import CircularLoader from "../../loader/CircularLoader";
+import { ReactComponent as McAfeeLogo } from "../../svg/Mcafee-Logo.svg";
 
 const SignupUI = (props) => {
   const {
@@ -23,17 +24,13 @@ const SignupUI = (props) => {
       {loader ? (
         <div className="loaderWrapper">
           <div className="loaderLogo">
-            <img
-              alt="McAfeeLogo"
-              className="Logo"
-              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-React-Appp/public/images/McAfee-Logo.png"
-            />
+            <McAfeeLogo className="Logo" />
           </div>
           <div className="loader-creating-your-account">
             <img
               alt="McAfeeLogo"
               className="loading-logo"
-              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-React-Appp/public/images/McAfee-Document-Logo1.png"
+              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-odrplat-auth0-ui/public/images/McAfee-Document-Logo1.png"
             />
             <div className="loading-text">
               {translate("Creating your account")}...
@@ -45,11 +42,7 @@ const SignupUI = (props) => {
         <>
           <div className="SignupWrapper">
             <div className="leftContainer">
-              <img
-                alt="McAfeeLogo"
-                className="Logo"
-                src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-React-Appp/public/images/McAfee-Logo.png"
-              />
+              <McAfeeLogo className="Logo" />
               <div className="Intro">
                 {translate("Create_your_McAfee_account")}
               </div>
@@ -73,7 +66,7 @@ const SignupUI = (props) => {
                 </p>
               </div>
             </div>
-            <div className="RightContainer">
+            <div className="RightContainerSignup">
               <Signup
                 onChange={onChange}
                 onSubmit={onSubmit}

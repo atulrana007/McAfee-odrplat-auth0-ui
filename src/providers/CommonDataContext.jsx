@@ -6,7 +6,17 @@ const CommonDataContext = React.createContext({});
 
 const CommonDataProvider = (props) => {
   const [connections, setConn] = useState([]);
-  const [LoginTitle, setLoginTitle] = useState("Sign_into_your_McAfee_account");
+  const [LoginText, setLoginText] = useState({
+    title: "Sign_into_your_McAfee_account",
+    subtitle: "choose_your_signIn_method_continue",
+  });
+  const [LoginForm, setLoginForm] = useState({
+    email: "",
+    password: "",
+    otp: "",
+    otpAvailable: false,
+    isSubmitting: false,
+  });
   useEffect(() => {
     const getCommonData = async () => {
       const res = await axios.get(
@@ -27,7 +37,13 @@ const CommonDataProvider = (props) => {
   }, []);
   return (
     <CommonDataContext.Provider
-      value={{ connections, LoginTitle, setLoginTitle }}
+      value={{
+        connections,
+        LoginText,
+        setLoginText,
+        LoginForm,
+        setLoginForm,
+      }}
     >
       {props.children}
     </CommonDataContext.Provider>

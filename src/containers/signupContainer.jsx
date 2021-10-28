@@ -7,9 +7,10 @@ import { validatePassword } from "../validator/PasswordValidator";
 
 export default function SignupContainer(props) {
   const { SignupWithPassword, loginWithPassword } = useContext(AccountContext);
-  const { connections } = useContext(CommonDataContext);
+  const { connections, setLoginText } = useContext(CommonDataContext);
   const { setWhichPage } = useContext(AppContext);
   const [loader, setLoader] = useState(false);
+  const { LoginForm, setLoginForm } = useContext(CommonDataContext);
 
   const [isValid, setIsValid] = useState(false);
   const [passwordRules, setPasswordRules] = useState(null);
@@ -65,6 +66,14 @@ export default function SignupContainer(props) {
         isSubmitting: false,
       });
       if (e.code === "invalid_signup") {
+        setLoginText({
+          title: "Looks_like_you_already_have_an_account",
+          subtitle: "This_email_already_exists",
+        });
+        setLoginForm({
+          ...LoginForm,
+          email: SignupForm.email,
+        });
         setWhichPage("login-page");
       } else {
         setSignupError({

@@ -46,6 +46,10 @@ const en = {
     Signing_you_in: "Signing you in",
     Create_one_now: "Create one now",
     Create_your_McAfee_account: "Create your McAfee account",
+    Looks_like_you_already_have_an_account:
+      "Looks like you already have an account! Sign in now",
+    This_email_already_exists:
+      "This email address is already associated with a Mcafee account. Sign in to Continue",
   },
 };
 export default en;
