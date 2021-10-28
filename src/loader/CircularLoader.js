@@ -3,7 +3,7 @@ import "./style.css";
 
 function CircularLoader() {
   return (
-    <div class="lds-ring">
+    <div className="lds-ring">
       <div></div>
       <div></div>
       <div></div>

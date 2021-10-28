@@ -118,7 +118,7 @@ input:-webkit-autofill {
   display: flex;
   flex-direction: column;
   border-top: 1px dashed #333;
-  margin: 1rem;
+  margin-top: 1rem;
 }
 .LoginOtpResendContainer {
   align-self: flex-start;
