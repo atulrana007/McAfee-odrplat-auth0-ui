@@ -17,25 +17,25 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
 window.LoginWidget = class LoginWidget {
-    init(opts) {
-        const pageConfig = opts.pageConfig;
-        if (!pageConfig) {
-            throw new Error("pageConfig must be provided in opts");
-        }
-
-        ReactDOM.render(
-            <BrowserRouter>
-                <App pageConfig={pageConfig} />
-            </BrowserRouter>,
-            document.getElementById("root")
-        );
+  init(opts) {
+    const pageConfig = opts.pageConfig;
+    if (!pageConfig) {
+      throw new Error("pageConfig must be provided in opts");
     }
+
+    ReactDOM.render(
+      <BrowserRouter>
+        <App pageConfig={pageConfig} />
+      </BrowserRouter>,
+      document.getElementById("root")
+    );
+  }
 };
 // ReactDOM.render(
-//     <BrowserRouter>
-//         <App pageConfig={{}} />
-//     </BrowserRouter>,
-//     document.getElementById("root")
+//   <BrowserRouter>
+//     <App pageConfig={{}} />
+//   </BrowserRouter>,
+//   document.getElementById("root")
 // );
 
 // ReactDOM.render(

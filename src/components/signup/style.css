@@ -1,10 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,600;0,800;1,700&display=swap");
 .SignupWrapper {
-  position: absolute;
-  top: 2rem;
-  left: 4rem;
-  right: 0;
-  bottom: 0;
+  margin-top: 2rem;
+  margin-left: 4rem;
   display: flex;
   flex-direction: row;
 }
@@ -34,7 +31,7 @@
   color: red;
 }
 .Intro {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
   font-family: "Poppins", sans-serif;
@@ -42,7 +39,8 @@
 .IntroSubHeading {
   display: flex;
   align-items: center;
-  color: black;
+  color: gray;
+  font-size: 1.125rem;
 }
 .PointsHeading {
   font-size: 2rem;
@@ -51,7 +49,7 @@
   color: gray;
 }
 .Points {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 400;
   color: grey;
 }
@@ -120,7 +118,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 6rem;
   font-weight: 600;
   color: #fff;
   background-color: rgb(204, 204, 204);
@@ -136,7 +134,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 6rem;
   font-weight: 600;
   color: #fff;
   background-color: rgb(54, 123, 255);
@@ -156,8 +154,7 @@
   justify-content: center;
   align-items: flex-start;
   margin-top: 1rem;
-  background-color: rgb(54, 123, 255, 0.3);
-  padding: 1rem;
+  background-color: transparent;
   border-radius: 1.5rem;
 }
 .Rule {
@@ -165,8 +162,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: bold;
+  background-color: #f5f6fa;
+  border-radius: 1rem;
+  padding: 4px 10px;
+  margin: 4px;
+}
+.Rule-text {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+  color: #4a4f5d;
 }
 
 .tick {
@@ -177,7 +186,7 @@
 .cancel {
   height: 2rem;
   width: 2rem;
-  color: rgb(228, 57, 57);
+  color: rgb(185, 70, 70);
 }
 .page-link {
   color: blue;
@@ -198,6 +207,38 @@
   display: flex;
   flex-direction: row;
   font-family: inherit;
-  font-size: 1.5rem;
+  border-top: 1px dashed #ced0d6;
+  padding: 1rem 0;
+  font-size: 0.875rem;
   align-items: center;
+}
+
+.loaderWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.loaderLogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+.loader-creating-your-account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.loading-logo {
+  height: 5rem;
+  width: 5rem;
+  margin-bottom: 1rem;
+}
+.loading-text {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
 }

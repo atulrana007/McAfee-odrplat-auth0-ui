@@ -4,75 +4,73 @@ import translate from "../../localization/translate";
 import PasswordFlow from "./password";
 import PasswordLessFlow from "./passwordless";
 const Login = (props) => {
-    const {
-        onChange,
-        switchLogin,
-        onSubmit,
-        LoginError,
-        LoginForm,
-        hideEmail,
-        onToggle,
-        validateEmail,
-        getOtp,
-    } = props;
-    const trackClickEvent = async (navElement) => {
-        let utag_data = window.utag_data;
-        let utag = window.utag;
-        let utagdata = { ...utag_data };
-        utagdata["tm_global_tealium_calltype"] = "manual";
-        utagdata["tm_global_navigation_element"] = navElement;
-        utagdata["tm_global_navigation_element_click"] = "true";
-        utag.link(utagdata);
-    };
-    return (
-        <div className="LoginWrapperContainer">
-            <form className="LoginInputWrapper">
-                {!switchLogin && (
-                    <PasswordFlow
-                        onChange={onChange}
-                        LoginError={LoginError}
-                        LoginForm={LoginForm}
-                        validateEmail={validateEmail}
-                        onSubmit={onSubmit}
-                        trackClickEvent={trackClickEvent}
-                    />
-                )}
+  const {
+    onChange,
+    switchLogin,
+    onSubmit,
+    LoginError,
+    LoginForm,
+    hideEmail,
+    onToggle,
+    validateEmail,
+    getOtp,
+  } = props;
+  const trackClickEvent = async (navElement) => {
+    let utag_data = window.utag_data;
+    let utag = window.utag;
+    let utagdata = { ...utag_data };
+    utagdata["tm_global_tealium_calltype"] = "manual";
+    utagdata["tm_global_navigation_element"] = navElement;
+    utagdata["tm_global_navigation_element_click"] = "true";
+    utag.link(utagdata);
+  };
+  return (
+    <div className="LoginWrapperContainer">
+      <form className="LoginInputWrapper">
+        {!switchLogin && (
+          <PasswordFlow
+            onChange={onChange}
+            LoginError={LoginError}
+            LoginForm={LoginForm}
+            validateEmail={validateEmail}
+            onSubmit={onSubmit}
+            trackClickEvent={trackClickEvent}
+          />
+        )}
 
-                {switchLogin && (
-                    <PasswordLessFlow
-                        onChange={onChange}
-                        LoginError={LoginError}
-                        LoginForm={LoginForm}
-                        validateEmail={validateEmail}
-                        getOtp={getOtp}
-                        hideEmail={hideEmail}
-                        onSubmit={onSubmit}
-                        trackClickEvent={trackClickEvent}
-                    />
-                )}
-            </form>
-            {LoginError.errorCode && (
-                <div className="Error">{translate(LoginError.errorCode)}</div>
-            )}
+        {switchLogin && (
+          <PasswordLessFlow
+            onChange={onChange}
+            LoginError={LoginError}
+            LoginForm={LoginForm}
+            validateEmail={validateEmail}
+            getOtp={getOtp}
+            hideEmail={hideEmail}
+            onSubmit={onSubmit}
+            trackClickEvent={trackClickEvent}
+          />
+        )}
+      </form>
+      {LoginError.errorCode && (
+        <div className="Error">{translate(LoginError.errorCode)}</div>
+      )}
 
-            <div className="SwitchContainer">
-                <div className="Switch">{translate("or")}</div>
+      <div className="SwitchContainer">
+        <div className="Switch">{translate("or")}</div>
 
-                {!switchLogin && (
-                    <button className="SwitchBtn" onClick={onToggle}>
-                        <div>
-                            {translate("Sign_in_with_a_onetime_passcode")}
-                        </div>
-                    </button>
-                )}
-                {switchLogin && (
-                    <button className="SwitchBtn" onClick={onToggle}>
-                        <div>{translate("signIn_with_password")}</div>
-                    </button>
-                )}
-            </div>
-        </div>
-    );
+        {!switchLogin && (
+          <button className="SwitchBtn" onClick={onToggle}>
+            <div>{translate("Sign_in_with_a_onetime_passcode")}</div>
+          </button>
+        )}
+        {switchLogin && (
+          <button className="SwitchBtn" onClick={onToggle}>
+            <div>{translate("signIn_with_password")}</div>
+          </button>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Login;
