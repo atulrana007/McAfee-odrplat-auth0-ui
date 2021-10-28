@@ -37,7 +37,7 @@ const en = {
         Already_have_a_account: "Already have a account ?",
         confirm_password: "Confirm Password",
         Request_one_time_passcode: "Request one-time passcode",
-        ACT0104: "Valid signon/password but max attempts exceeded",
+        ACT0104: "Invalid signon/password and max attempts exceeded",
         ACT0105: "Valid signon/password but max attempts exceeded",
     },
 };

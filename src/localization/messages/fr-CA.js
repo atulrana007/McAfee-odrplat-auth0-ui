@@ -40,9 +40,9 @@ const fr = {
         confirm_password: "Confirmez le mot de passe",
         Request_one_time_passcode: "Demander un mot de passe à usage unique",
         ACT0104:
-            "Votre compte a été bloqué après plusieurs tentatives de connexion consécutives. Nous vous avons envoyé un e-mail avec des instructions sur la façon de le débloquer",
+            "Code d'accès/mot de passe non valide et nombre maximal de tentatives dépassé",
         ACT0105:
-            "Votre compte a été bloqué après plusieurs tentatives de connexion consécutives. Nous vous avons envoyé un e-mail avec des instructions sur la façon de le débloquer",
+            "Code d'accès/mot de passe valide et tentatives maximales dépassées",
     },
 };
 export default fr;
