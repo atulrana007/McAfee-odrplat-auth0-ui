@@ -1,8 +1,9 @@
 import React from "react";
 import "./style.css";
 import translate from "../../localization/translate";
-import { AiOutlineMail } from "react-icons/ai";
-import { MdLockOutline } from "react-icons/md";
+
+import { ReactComponent as OutlineMail } from "../../svg/mailIcon.svg";
+import { ReactComponent as LockOutline } from "../../svg/lockIcon.svg";
 // import SocialButtons from "./socialLogin";
 
 const Login = (props) => {
@@ -49,7 +50,7 @@ const Login = (props) => {
                 borderRadius: "1rem",
               }}
             >
-              <AiOutlineMail className="LoginInputLogo" />
+              <OutlineMail className="LoginInputLogo" />
               <input
                 type="email"
                 id="email"
@@ -62,8 +63,6 @@ const Login = (props) => {
             </div>
           </div>
         </>
-
-        {LoginError.email && <div className="Error">{LoginError.email}</div>}
         {!switchLogin && (
           <>
             <div className="LoginInputContainer">
@@ -73,11 +72,10 @@ const Login = (props) => {
               <div
                 style={{
                   display: "flex",
-                  borderRadius: "1rem",
-                  backgroundColor: "#ffff",
+                  borderRadius: "0.75rem",
                 }}
               >
-                <MdLockOutline className="LoginInputLogo" />
+                <LockOutline className="LoginInputLogo" />
                 <input
                   type="password"
                   id="password"

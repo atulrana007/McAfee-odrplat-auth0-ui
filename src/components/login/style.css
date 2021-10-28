@@ -2,6 +2,8 @@
 .LoginContainer {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+  margin-left: 4rem;
 }
 
 .LoginLeftWrapper {
@@ -11,16 +13,19 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  font-size: 1.4rem;
 }
 .LoginIntro {
   font-weight: 700;
   margin-bottom: 1rem;
+  font-size: 2rem;
   font-family: "Poppins", sans-serif;
+  line-height: 40px;
 }
 .LoginIntroSubHeading {
   color: gray;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
+  font-size: 1.125rem;
+  font-weight: 400;
 }
 
 .LoginRightWrapper {
@@ -32,9 +37,9 @@
 }
 
 .LoginBottomHeading {
-  border-top: 1px dashed dimgray;
+  border-top: 1px dashed #ced0d6;
   padding: 1rem 0;
-  font-size: 1rem;
+  font-size: 0.875rem;
   flex-wrap: wrap;
   display: flex;
 }
@@ -61,7 +66,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  border: 1px solid RGB(212, 213, 219);
+  border: 1px solid #848faa;
   border-radius: 1rem;
   box-shadow: inset 0 2px 2px 0 rgb(0 0 0 / 5%);
   margin: 1rem 0;
@@ -99,7 +104,7 @@ input:-webkit-autofill {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 6rem;
   font-weight: 600;
   color: #fff;
   background-color: rgb(54, 123, 255);
@@ -130,7 +135,7 @@ input:-webkit-autofill {
   color: rgb(54, 123, 255);
   padding: 1rem 1rem;
   display: flex;
-  border-radius: 1rem;
+  border-radius: 6rem;
   border: 2px solid rgb(54, 123, 255);
   justify-content: center;
   align-items: center;
@@ -165,7 +170,7 @@ input:-webkit-autofill {
   flex-wrap: wrap;
 }
 .LoginInputLogo {
-  margin: 1.2rem 5px;
+  margin: 1.2rem 5px 1.2rem 1rem;
   display: none;
   width: 1.6rem;
   height: 1.6rem;
@@ -182,7 +187,8 @@ input:-webkit-autofill {
     margin: 1rem 5rem;
   }
   .LoginBottomHeading {
-    font-size: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
   .LoginInputLogo {
     display: flex;
@@ -217,7 +223,7 @@ input:-webkit-autofill {
   margin-top: 2rem;
   flex-direction: row;
   padding: 1rem 1rem;
-  border-radius: 2rem;
+  border-radius: 0.75rem;
   border: 3px solid RGB(212, 213, 219);
   color: RGB(38, 41, 77);
   font-size: inherit;

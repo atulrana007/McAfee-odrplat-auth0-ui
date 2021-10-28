@@ -42,6 +42,9 @@ const fr = {
     confirm_password: "Confirmez le mot de passe",
     Request_one_time_passcode: "Demander un mot de passe à usage unique",
     Create_My_Account: "Créer mon compte",
+    Sign_into_your_McAfee_account: "Connectez-vous à votre compte McAfee",
+    Sign_In: "S'identifier",
+    Signing_you_in: "Vous connecter",
   },
 };
 export default fr;

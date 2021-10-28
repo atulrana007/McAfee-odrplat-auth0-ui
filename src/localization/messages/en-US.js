@@ -40,6 +40,9 @@ const en = {
     confirm_password: "Confirm Password",
     Request_one_time_passcode: "Request one-time passcode",
     Create_My_Account: "Create My Account",
+    Sign_into_your_McAfee_account: "Sign into your McAfee account",
+    Sign_In: "Sign In",
+    Signing_you_in: "Signing you in",
   },
 };
 export default en;

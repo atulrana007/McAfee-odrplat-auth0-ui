@@ -69,7 +69,7 @@ const SignupUI = (props) => {
                     setWhichPage("login-page");
                   }}
                 >
-                  Login
+                  {translate("Sign_In")}
                 </p>
               </div>
             </div>

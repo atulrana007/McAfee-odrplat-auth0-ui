@@ -60,6 +60,10 @@ export default function SignupContainer(props) {
         await loginWithPassword(SignupForm.email, SignupForm.password);
       }
     } catch (e) {
+      setSignupForm({
+        ...SignupForm,
+        isSubmitting: false,
+      });
       if (e.code === "invalid_signup") {
         setWhichPage("login-page");
       } else {
@@ -71,7 +75,6 @@ export default function SignupContainer(props) {
       }
     }
     setLoader(false);
-    debounceSubmit();
   };
 
   const onClick = (e) => {

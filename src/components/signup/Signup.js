@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./style.css";
-import { AiOutlineMail } from "react-icons/ai";
-import { MdLockOutline } from "react-icons/md";
-import { AiFillEye } from "react-icons/ai";
+import { ReactComponent as OutlineMail } from "../../svg/mailIcon.svg";
+import { ReactComponent as LockOutline } from "../../svg/lockIcon.svg";
+import { ReactComponent as FillEye } from "../../svg/eyeIcon.svg";
+import { ReactComponent as PasswordTick } from "../../svg/passwordPolicyTick.svg";
+import { ReactComponent as PasswordCross } from "../../svg/passwordPolicyCross.svg";
 import { DisplayRules } from "../../utils/displayRules";
 import { MdOutlineCancel } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
@@ -34,18 +36,8 @@ const Signup = (props) => {
           {SignupForm.email !== "" ? (
             <div className="InputLabel">{translate("emailAddress")}</div>
           ) : null}
-          <div
-            className="InputAndLogoSignup"
-            // style={{
-            //   border:
-            //     LoginError.isEmailError === true
-            //       ? "2px solid red"
-            //       : LoginError.isEmailError === false
-            //       ? "2px solid green"
-            //       : "",
-            // }}
-          >
-            <AiOutlineMail
+          <div className="InputAndLogoSignup">
+            <OutlineMail
               style={{
                 height: "2rem",
                 width: "2rem",
@@ -90,7 +82,7 @@ const Signup = (props) => {
                 }`,
               }}
             >
-              <MdLockOutline
+              <LockOutline
                 style={{
                   height: "2rem",
                   width: "2rem",
@@ -112,13 +104,13 @@ const Signup = (props) => {
                 }}
                 onBlur={() => setDisplayRules(false)}
               />
-              <AiFillEye
+              <FillEye
                 style={{
                   height: "2rem",
                   width: "2rem",
                   marginTop: "0.5rem",
-                  color: "rgb(175, 174, 174)",
                   cursor: "pointer",
+                  color: "#DADADA",
                 }}
                 onClick={() => {
                   showPassword ? setShowPassword(false) : setShowPassword(true);
@@ -136,7 +128,7 @@ const Signup = (props) => {
             </div>
           </div>
           <div>
-            {displayRules ? (
+            {displayRules || true ? (
               <>
                 <div className="Password-rules">
                   {displayablerule.map((item, index) => {
@@ -145,12 +137,12 @@ const Signup = (props) => {
                         {" "}
                         <div className="checkbox">
                           {PasswordPolicyState[getKeys[index]] ? (
-                            <TiTick className="tick" />
+                            <PasswordTick className="tick" />
                           ) : (
-                            <MdOutlineCancel className="cancel" />
+                            <PasswordCross className="cancel" />
                           )}
                         </div>
-                        {item}
+                        <div className="Rule-text">{item}</div>
                       </div>
                     );
                   })}
@@ -192,7 +184,7 @@ const Signup = (props) => {
                 }`,
               }}
             >
-              <MdLockOutline
+              <LockOutline
                 style={{
                   height: "2rem",
                   width: "2rem",
@@ -210,7 +202,7 @@ const Signup = (props) => {
                 onChange={onChange}
                 onBlur={() => setDisplayRules(false)}
               />
-              <AiFillEye
+              <FillEye
                 style={{
                   height: "2rem",
                   width: "2rem",
@@ -256,7 +248,9 @@ const Signup = (props) => {
               SignupForm.email !== "" &&
               SignupForm.password !== "" &&
               SignupForm.confirmPassword !== "" &&
-              isValid
+              SignupForm.password === SignupForm.confirmPassword &&
+              isValid &&
+              !SignupForm.isSubmitting
                 ? "SubmitButtonActive"
                 : "SubmitButton"
             }

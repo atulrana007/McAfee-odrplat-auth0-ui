@@ -31,7 +31,7 @@
   color: red;
 }
 .Intro {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
   font-family: "Poppins", sans-serif;
@@ -39,7 +39,8 @@
 .IntroSubHeading {
   display: flex;
   align-items: center;
-  color: black;
+  color: gray;
+  font-size: 1.125rem;
 }
 .PointsHeading {
   font-size: 2rem;
@@ -48,7 +49,7 @@
   color: gray;
 }
 .Points {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 400;
   color: grey;
 }
@@ -117,7 +118,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 6rem;
   font-weight: 600;
   color: #fff;
   background-color: rgb(204, 204, 204);
@@ -133,7 +134,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 6rem;
   font-weight: 600;
   color: #fff;
   background-color: rgb(54, 123, 255);
@@ -153,8 +154,7 @@
   justify-content: center;
   align-items: flex-start;
   margin-top: 1rem;
-  background-color: rgb(54, 123, 255, 0.3);
-  padding: 1rem;
+  background-color: transparent;
   border-radius: 1.5rem;
 }
 .Rule {
@@ -162,8 +162,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: bold;
+  background-color: #f5f6fa;
+  border-radius: 1rem;
+  padding: 4px 10px;
+  margin: 4px;
+}
+.Rule-text {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+  color: #4a4f5d;
 }
 
 .tick {
@@ -195,7 +207,9 @@
   display: flex;
   flex-direction: row;
   font-family: inherit;
-  font-size: 1.5rem;
+  border-top: 1px dashed #ced0d6;
+  padding: 1rem 0;
+  font-size: 0.875rem;
   align-items: center;
 }
 
