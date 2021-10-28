@@ -29,7 +29,7 @@ const Login = (props) => {
     return (
         <div className="LoginWrapperContainer">
             <form className="LoginInputWrapper">
-                <>
+                <div style={{ display: "flex", flexDirection: "column" }}>
                     <div className="LoginInputContainer">
                         {LoginForm.email !== "" ? (
                             <div
@@ -57,7 +57,14 @@ const Login = (props) => {
                                 borderRadius: "1rem",
                             }}
                         >
-                            <AiOutlineMail className="LoginInputLogo" />
+                            <AiOutlineMail
+                                className="LoginInputLogo"
+                                style={{
+                                    color: validateEmail(LoginForm.email)
+                                        ? "green"
+                                        : "",
+                                }}
+                            />
                             <input
                                 type="email"
                                 id="email"
@@ -69,7 +76,7 @@ const Login = (props) => {
                             />
                         </div>
                     </div>
-                </>
+                </div>
 
                 {LoginError.email && (
                     <div className="Error">{LoginError.email}</div>
