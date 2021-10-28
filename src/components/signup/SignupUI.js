@@ -33,7 +33,7 @@ const SignupUI = (props) => {
             <img
               alt="McAfeeLogo"
               className="loading-logo"
-              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-React-Appp/public/images/McAfee-Document-Logo.png"
+              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-React-Appp/public/images/McAfee-Document-Logo1.png"
             />
             <div className="loading-text">
               {translate("Creating your account")}...

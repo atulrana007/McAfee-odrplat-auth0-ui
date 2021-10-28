@@ -18,6 +18,7 @@ const LoginUI = (props) => {
     onPressContinue,
     getOtp,
     socialBtn,
+    hideEmail,
     loader,
   } = props;
   const { setWhichPage } = useContext(AppContext);
@@ -37,7 +38,7 @@ const LoginUI = (props) => {
             <img
               alt="McAfeeLogo"
               className="loading-logo"
-              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-React-Appp/public/images/McAfee-Document-Logo.png"
+              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-React-Appp/public/images/McAfee-Document-Logo1.png"
             />
             <div className="loading-text">{translate("Signing_you_in")}...</div>
             <CircularLoader />
@@ -85,6 +86,7 @@ const LoginUI = (props) => {
                 getOtp={getOtp}
                 validateEmail={validateEmail}
                 socialBtn={socialBtn}
+                hideEmail={hideEmail}
               />
             </div>
           </div>

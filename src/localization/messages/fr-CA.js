@@ -20,8 +20,6 @@ const fr = {
     too_many_attempts:
       "Votre compte a été bloqué après plusieurs tentatives de connexion consécutives. Nous vous avons envoyé un e-mail avec des instructions sur la façon de le débloquer",
     Welcome_to_dashboard: "bienvenue au tableau de bord",
-    Create_your_McAfee_account: "Créez votre compte McAfee",
-    Create_one_now: "Créez-en un maintenant",
     invalid_request:
       "Corps de requête non valide. Tous et uniquement client_id, type d'identification, nom d'utilisateur, otp, domaine sont requis",
     unauthorized_client: "Connexion d'origine croisée non autorisée.",
@@ -41,10 +39,17 @@ const fr = {
     Already_have_a_account: "Vous avez déjà un compte ?",
     confirm_password: "Confirmez le mot de passe",
     Request_one_time_passcode: "Demander un mot de passe à usage unique",
+    ACT0104:
+      "Code d'accès/mot de passe non valide et nombre maximal de tentatives dépassé",
+    ACT0105:
+      "Code d'accès/mot de passe valide et tentatives maximales dépassées",
+    ResendCode: "Renvoyer le code",
     Create_My_Account: "Créer mon compte",
     Sign_into_your_McAfee_account: "Connectez-vous à votre compte McAfee",
     Sign_In: "S'identifier",
     Signing_you_in: "Vous connecter",
+    Create_one_now: "Créez-en un maintenant",
+    Create_your_McAfee_account: "Créez votre compte McAfee",
   },
 };
 export default fr;

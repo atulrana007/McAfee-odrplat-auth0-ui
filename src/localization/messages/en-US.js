@@ -19,8 +19,6 @@ const en = {
     too_many_attempts:
       " Your account has been blocked after multiple consecutive login attempts. We’ve sent you an email with instructions on how to unblock it.",
     Welcome_to_dashboard: "Welcome to Dashboard",
-    Create_your_McAfee_account: "Create your McAfee account",
-    Create_one_now: "Create one now",
     invalid_request:
       " Invalid request body. All and only of client_id, credential_type, username, otp, realm are required.",
     unauthorized_client: "Cross origin login not allowed.",
@@ -39,10 +37,15 @@ const en = {
     Already_have_a_account: "Already have a account ?",
     confirm_password: "Confirm Password",
     Request_one_time_passcode: "Request one-time passcode",
+    ACT0104: "Invalid signon/password and max attempts exceeded",
+    ACT0105: "Valid signon/password but max attempts exceeded",
+    ResendCode: "Resend Code",
     Create_My_Account: "Create My Account",
     Sign_into_your_McAfee_account: "Sign into your McAfee account",
     Sign_In: "Sign In",
     Signing_you_in: "Signing you in",
+    Create_one_now: "Create one now",
+    Create_your_McAfee_account: "Create your McAfee account",
   },
 };
 export default en;

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import { AccountContext } from "../providers/AccountContext";
 export default function LoginContainer(props) {
+  const [loader, setLoader] = useState(false);
   const { loginWithPassword, otpLogin, otpStart, getSocialLogin } =
     useContext(AccountContext);
-  const [loader, setLoader] = useState(false);
 
   const [LoginForm, setLoginForm] = useState({
     email: "",
@@ -21,6 +21,8 @@ export default function LoginContainer(props) {
   const [switchLogin, setToggle] = useState(false);
 
   const [Continue, setContinue] = useState(false);
+
+  const [hideEmail, setHideEmail] = useState(false);
 
   const onToggle = () => {
     setToggle(!switchLogin);
@@ -130,6 +132,7 @@ export default function LoginContainer(props) {
             ...LoginForm,
             otpAvailable: true,
           });
+          setHideEmail(true);
         }
       } catch (err) {
         setLoginForm({
@@ -145,14 +148,10 @@ export default function LoginContainer(props) {
     }
     setLoader(false);
   };
-  const getOtp = async () => {
+  const getOtp = async (e) => {
     try {
-      setToggle(!switchLogin);
+      e.preventDefault();
       await otpStart(LoginForm.email);
-      setLoginForm({
-        ...LoginForm,
-        otpAvailable: true,
-      });
     } catch (err) {
       console.log(err);
       setLoginError({
@@ -177,6 +176,8 @@ export default function LoginContainer(props) {
     onPressContinue,
     getOtp,
     socialBtn,
+    setHideEmail,
     loader,
+    hideEmail,
   });
 }
