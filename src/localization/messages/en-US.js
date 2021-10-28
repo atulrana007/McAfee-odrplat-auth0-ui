@@ -39,6 +39,7 @@ const en = {
         Request_one_time_passcode: "Request one-time passcode",
         ACT0104: "Invalid signon/password and max attempts exceeded",
         ACT0105: "Valid signon/password but max attempts exceeded",
+        ResendCode: "Resend Code",
     },
 };
 export default en;

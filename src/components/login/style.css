@@ -122,6 +122,15 @@ input:-webkit-autofill {
     border-top: 1px dashed #333;
     margin: 1rem;
 }
+.LoginOtpResendContainer {
+    align-self: flex-end;
+}
+.LoginResendBtn {
+    border: none;
+    color: rgb(54, 123, 255);
+    background-color: #fff;
+    font-weight: 600;
+}
 
 .Switch {
     align-self: center;

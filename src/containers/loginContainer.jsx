@@ -144,14 +144,10 @@ export default function LoginContainer(props) {
             }
         }
     };
-    const getOtp = async () => {
+    const getOtp = async (e) => {
         try {
-            setToggle(!switchLogin);
+            e.preventDefault();
             await otpStart(LoginForm.email);
-            setLoginForm({
-                ...LoginForm,
-                otpAvailable: true,
-            });
         } catch (err) {
             console.log(err);
             setLoginError({

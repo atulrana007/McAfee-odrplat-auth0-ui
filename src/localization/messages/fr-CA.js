@@ -43,6 +43,7 @@ const fr = {
             "Code d'accès/mot de passe non valide et nombre maximal de tentatives dépassé",
         ACT0105:
             "Code d'accès/mot de passe valide et tentatives maximales dépassées",
+        ResendCode: "Renvoyer le code",
     },
 };
 export default fr;
