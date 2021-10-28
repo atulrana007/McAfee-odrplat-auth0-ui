@@ -90,10 +90,11 @@ export default function LoginContainer(props) {
       ...LoginForm,
       isSubmitting: true,
     });
-    setLoader(true);
+
     e.preventDefault();
     if (!switchLogin) {
       try {
+        setLoader(true);
         await loginWithPassword(LoginForm.email, LoginForm.password);
         setLoginError({
           ...LoginError,
@@ -117,6 +118,7 @@ export default function LoginContainer(props) {
     } else {
       try {
         if (LoginForm.otpAvailable) {
+          setLoader(true);
           await otpLogin(LoginForm.email, LoginForm.otp);
           setLoginForm({
             ...LoginForm,

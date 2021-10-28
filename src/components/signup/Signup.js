@@ -6,8 +6,6 @@ import { ReactComponent as FillEye } from "../../svg/eyeIcon.svg";
 import { ReactComponent as PasswordTick } from "../../svg/passwordPolicyTick.svg";
 import { ReactComponent as PasswordCross } from "../../svg/passwordPolicyCross.svg";
 import { DisplayRules } from "../../utils/displayRules";
-import { MdOutlineCancel } from "react-icons/md";
-import { TiTick } from "react-icons/ti";
 import { ReactComponent as TickIcon } from "../../svg/tickIcon.svg";
 import translate from "../../localization/translate";
 
