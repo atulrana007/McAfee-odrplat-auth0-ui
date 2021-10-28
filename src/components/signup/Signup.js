@@ -128,12 +128,12 @@ const Signup = (props) => {
             </div>
           </div>
           <div>
-            {displayRules || true ? (
+            {displayRules ? (
               <>
                 <div className="Password-rules">
                   {displayablerule.map((item, index) => {
                     return (
-                      <div className="Rule">
+                      <div className="Rule" key={index}>
                         {" "}
                         <div className="checkbox">
                           {PasswordPolicyState[getKeys[index]] ? (
