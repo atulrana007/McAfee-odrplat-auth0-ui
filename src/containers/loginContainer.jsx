@@ -21,6 +21,8 @@ export default function LoginContainer(props) {
 
     const [Continue, setContinue] = useState(false);
 
+    const [hideEmail, setHideEmail] = useState(false);
+
     const onToggle = () => {
         setToggle(!switchLogin);
         setLoginError({
@@ -130,6 +132,7 @@ export default function LoginContainer(props) {
                         ...LoginForm,
                         otpAvailable: true,
                     });
+                    setHideEmail(true);
                 }
             } catch (err) {
                 setLoginForm({
@@ -172,5 +175,7 @@ export default function LoginContainer(props) {
         onPressContinue,
         getOtp,
         socialBtn,
+        setHideEmail,
+        hideEmail,
     });
 }

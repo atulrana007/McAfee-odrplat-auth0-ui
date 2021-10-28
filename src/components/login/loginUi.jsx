@@ -17,6 +17,7 @@ const LoginUI = (props) => {
         onPressContinue,
         getOtp,
         socialBtn,
+        hideEmail,
     } = props;
     const { setWhichPage } = useContext(AppContext);
 
@@ -62,6 +63,7 @@ const LoginUI = (props) => {
                         getOtp={getOtp}
                         validateEmail={validateEmail}
                         socialBtn={socialBtn}
+                        hideEmail={hideEmail}
                     />
                 </div>
             </div>
