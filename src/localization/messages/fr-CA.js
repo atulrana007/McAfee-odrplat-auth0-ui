@@ -66,6 +66,8 @@ const fr = {
     Privacy_Notice: "Avis de confidentialité",
     and: "et",
     Sign_in_now: "Connectez vous maintenant",
+    This_passcode_has_expired: "Ce mot de passe a expiré",
+    Password_expired_in: "Mot de passe expiré dans",
   },
 };
 export default fr;

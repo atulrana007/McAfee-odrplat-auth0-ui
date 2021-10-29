@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./style.css";
+import translate from "../../localization/translate";
 
 const Timer = (props) => {
   const { initialMinute = 0, initialSeconds = 0 } = props;
@@ -28,11 +29,16 @@ const Timer = (props) => {
   return (
     <div className="timer-class">
       {minutes === 0 && seconds === 0 ? (
-        <div className="timer-inactive">This passcode has expired</div>
+        <div className="timer-inactive">
+          {translate("This_passcode_has_expired")}
+        </div>
       ) : (
         <div className="timer-active">
-          Password expired in <span style={{ fontWeight: 700 }}>{minutes}</span>{" "}
-          minutes
+          {translate("Password_expired_in")}{" "}
+          <span style={{ fontWeight: 700 }}>
+            {minutes === 0 && seconds > 0 ? seconds : minutes}
+          </span>{" "}
+          {minutes === 0 && seconds > 0 ? "second" : "minutes"}
         </div>
       )}
     </div>

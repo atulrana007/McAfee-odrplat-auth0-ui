@@ -62,6 +62,8 @@ const en = {
     Privacy_Notice: "Privacy Notice",
     and: "and",
     Sign_in_now: "Sign in now",
+    This_passcode_has_expired: "This passcode has expired",
+    Password_expired_in: "Password expired in",
   },
 };
 export default en;
