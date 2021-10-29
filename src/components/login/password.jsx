@@ -1,8 +1,9 @@
 import React from "react";
 import "./style.css";
 import translate from "../../localization/translate";
-import { AiOutlineMail } from "react-icons/ai";
-import { MdLockOutline } from "react-icons/md";
+import { ReactComponent as OutlineMail } from "../../svg/mailIcon.svg";
+import { ReactComponent as LockOutline } from "../../svg/lockIcon.svg";
+import { ReactComponent as TickIcon } from "../../svg/tickIcon.svg";
 
 const PasswordFlow = (props) => {
   const {
@@ -12,6 +13,7 @@ const PasswordFlow = (props) => {
     validateEmail,
     onSubmit,
     trackClickEvent,
+    LoginText,
   } = props;
   return (
     <>
@@ -21,7 +23,7 @@ const PasswordFlow = (props) => {
             <div
               className="LoginInputLabel"
               style={{
-                color: validateEmail(LoginForm.email) ? "green" : "red",
+                color: validateEmail(LoginForm.email) ? "#0CA77D" : "red",
               }}
             >
               {translate("emailAddress")}
@@ -35,13 +37,13 @@ const PasswordFlow = (props) => {
                 LoginError.isEmailError === true
                   ? "2px solid red"
                   : validateEmail(LoginForm.email)
-                  ? "2px solid green"
+                  ? "2px solid #0CA77D"
                   : "",
               backgroundColor: "#ffff",
               borderRadius: "1rem",
             }}
           >
-            <AiOutlineMail
+            <OutlineMail
               className="LoginInputLogo"
               style={{
                 color: validateEmail(LoginForm.email) ? "green" : "",
@@ -56,6 +58,17 @@ const PasswordFlow = (props) => {
               className="LoginInput"
               onChange={onChange}
             />
+            {validateEmail(LoginForm.email) &&
+            LoginText.title === "Looks_like_you_already_have_an_account" ? (
+              <TickIcon
+                style={{
+                  height: "2rem",
+                  width: "2rem",
+                  marginTop: "0.8rem",
+                  marginRight: "0.2rem",
+                }}
+              />
+            ) : null}
           </div>
         </div>
       </div>
@@ -72,7 +85,7 @@ const PasswordFlow = (props) => {
               backgroundColor: "#ffff",
             }}
           >
-            <MdLockOutline className="LoginInputLogo" />
+            <LockOutline className="LoginInputLogo" />
             <input
               type="password"
               id="password"

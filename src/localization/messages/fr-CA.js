@@ -44,7 +44,7 @@ const fr = {
     ACT0105:
       "Code d'accès/mot de passe valide et tentatives maximales dépassées",
     ResendCode: "Renvoyer le code",
-    Create_My_Account: "Créer mon compte",
+    Create_my_Account: "Créer mon compte",
     Sign_into_your_McAfee_account: "Connectez-vous à votre compte McAfee",
     Sign_In: "S'identifier",
     Signing_you_in: "Vous connecter",
@@ -58,6 +58,14 @@ const fr = {
     privacyNotice: "avis de confidentialité",
     If_you_didnt_receive_a_passcode: "Si vous n'avez pas reçu de code d'accès,",
     check_your_spam_folder: "Vérifiez votre dossier courrier indésirable.",
+    we_will_send_otp:
+      "Nous vous enverrons un mot de passe à usage unique à votre adresse e-mail pour vérifier votre identité et vous connecter.",
+    By_clicking: "En cliquant",
+    McAfee_License_Agreement: "Contrat de licence McAfee",
+    you_accept: "vous acceptez",
+    Privacy_Notice: "Avis de confidentialité",
+    and: "et",
+    Sign_in_now: "Connectez vous maintenant",
   },
 };
 export default fr;

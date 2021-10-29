@@ -12,6 +12,7 @@ export default function LoginContainer(props) {
     databaseError: "",
     errorCode: "",
   });
+  const [otpTimer, setOtpTimer] = useState(false);
   const [switchLogin, setToggle] = useState(false);
 
   const [Continue, setContinue] = useState(false);
@@ -121,6 +122,7 @@ export default function LoginContainer(props) {
           });
         } else {
           await otpStart(LoginForm.email);
+          setOtpTimer(true);
           setLoginForm({
             ...LoginForm,
             isSubmitting: false,
@@ -176,5 +178,7 @@ export default function LoginContainer(props) {
     setHideEmail,
     loader,
     hideEmail,
+    setOtpTimer,
+    otpTimer,
   });
 }

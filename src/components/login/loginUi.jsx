@@ -6,6 +6,7 @@ import Login from "./Login";
 import translate from "../../localization/translate";
 import CircularLoader from "../../loader/CircularLoader";
 import { ReactComponent as McAfeeLogo } from "../../svg/Mcafee-Logo.svg";
+import Timer from "../Timer/index";
 
 const LoginUI = (props) => {
   const {
@@ -22,9 +23,11 @@ const LoginUI = (props) => {
     socialBtn,
     hideEmail,
     loader,
+    setOtpTimer,
+    otpTimer,
   } = props;
   const { setWhichPage } = useContext(AppContext);
-  const { LoginText } = useContext(CommonDataContext);
+  const { LoginText, setLoginText } = useContext(CommonDataContext);
 
   return (
     <>
@@ -53,12 +56,17 @@ const LoginUI = (props) => {
                 <div className="LoginIntroSubHeading">
                   {translate(LoginText.subtitle)}
                 </div>
+                {otpTimer ? <Timer initialMinute={20} /> : null}
                 <div className="LoginBottomHeading">
                   <div>{translate("Do_not_have_an_account")}</div>
                   <div
                     className="Login-page-link"
                     onClick={() => {
                       setWhichPage("signup-page");
+                      setLoginText({
+                        title: "Sign_into_your_McAfee_account",
+                        subtitle: "choose_your_signIn_method_continue",
+                      });
                     }}
                   >
                     {translate("Create_one_now")}
@@ -80,6 +88,7 @@ const LoginUI = (props) => {
                 validateEmail={validateEmail}
                 socialBtn={socialBtn}
                 hideEmail={hideEmail}
+                LoginText={LoginText}
               />
             </div>
           </div>

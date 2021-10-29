@@ -8,6 +8,7 @@
 }
 .leftContainer {
   flex: 1;
+  padding: 1rem 0rem;
 }
 .InputAndLogoSignup {
   display: flex;
@@ -55,6 +56,7 @@
   font-size: 1.125rem;
   font-weight: 400;
   color: grey;
+  margin-bottom: 1rem;
 }
 .Input {
   padding: 0.5rem 1rem;
@@ -64,7 +66,7 @@
   flex: 1;
   border: 0px solid white;
   color: RGB(38, 41, 77);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   outline: none;
 }
 .InputLabel {
@@ -258,6 +260,6 @@
     margin: 0rem 5rem;
   }
   .InputWrapper {
-    margin-top: 4rem;
+    margin-top: 1.5rem;
   }
 }

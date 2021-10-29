@@ -108,7 +108,6 @@ const Signup = (props) => {
                   width: "2rem",
                   marginTop: "0.5rem",
                   cursor: "pointer",
-                  color: "#DADADA",
                 }}
                 onClick={() => {
                   showPassword ? setShowPassword(false) : setShowPassword(true);
@@ -229,16 +228,19 @@ const Signup = (props) => {
           )}
           <div className="PolicyLink">
             <p>
-              {" "}
-              By clicking{" "}
-              <span style={{ fontWeight: "bold" }}>Create my account</span>, you
-              accept
+              {translate("By_clicking")}
+              <span style={{ fontWeight: "bold" }}>
+                {" "}
+                {translate("Create_my_Account")},{" "}
+              </span>
+              {translate("you_accept")}{" "}
               <span style={{ color: "rgb(66, 88, 255)" }}>
-                McAfee’s License <br />
-                Agreement
+                {translate("McAfee_License_Agreement")}
               </span>{" "}
-              and
-              <span style={{ color: "rgb(66, 88, 255)" }}> Privacy Notice</span>
+              {translate("and")}{" "}
+              <span style={{ color: "rgb(66, 88, 255)" }}>
+                {translate("Privacy_Notice")}
+              </span>
             </p>
           </div>
           <button
@@ -255,7 +257,7 @@ const Signup = (props) => {
             onClick={onSubmit}
             disabled={SignupForm.isSubmitting}
           >
-            <div>{translate("Create_My_Account")}</div>
+            <div>{translate("Create_my_Account")}</div>
           </button>
         </>
       </form>

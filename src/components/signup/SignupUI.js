@@ -17,6 +17,8 @@ const SignupUI = (props) => {
     isValid,
     SignupError,
     loader,
+    setLoginForm,
+    LoginForm,
   } = props;
   const { setWhichPage } = useContext(AppContext);
   return (
@@ -59,10 +61,11 @@ const SignupUI = (props) => {
                 <p
                   className="page-link"
                   onClick={() => {
+                    setLoginForm({ ...LoginForm, email: "" });
                     setWhichPage("login-page");
                   }}
                 >
-                  {translate("Sign_In")}
+                  {translate("Sign_in_now")}
                 </p>
               </div>
             </div>

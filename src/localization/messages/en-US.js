@@ -40,7 +40,7 @@ const en = {
     ACT0104: "Invalid signon/password and max attempts exceeded",
     ACT0105: "Valid signon/password but max attempts exceeded",
     ResendCode: "Resend Code",
-    Create_My_Account: "Create My Account",
+    Create_my_Account: "Create My Account",
     Sign_into_your_McAfee_account: "Sign into your McAfee account",
     Sign_In: "Sign In",
     Signing_you_in: "Signing you in",
@@ -54,6 +54,14 @@ const en = {
     privacyNotice: "Privacy Notice",
     If_you_didnt_receive_a_passcode: "If you didn't receive a passcode",
     check_your_spam_folder: "check your spam folder.",
+    we_will_send_otp:
+      "We’ll send a one-time passcode to your email address to verify your identity and sign you in.",
+    By_clicking: "By clicking",
+    McAfee_License_Agreement: "McAfee’s License Agreement",
+    you_accept: "you accept",
+    Privacy_Notice: "Privacy Notice",
+    and: "and",
+    Sign_in_now: "Sign in now",
   },
 };
 export default en;

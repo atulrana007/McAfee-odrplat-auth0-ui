@@ -83,9 +83,9 @@
   padding: 1rem 1.5rem;
   border-radius: 1rem;
   flex: 1;
+  font-size: 1.3rem;
   color: RGB(38, 41, 77);
   border: none;
-  font-size: inherit;
   outline: none;
   width: -webkit-fill-available;
 }
@@ -252,6 +252,17 @@ input:-webkit-autofill {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.opt-info {
+  padding: 1rem 0.2rem;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 20px;
+  color: #6d7895;
+  /* or 167% */
+
+  text-align: center;
 }
 
 @media only screen and (min-width: 700px) {

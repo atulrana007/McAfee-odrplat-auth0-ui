@@ -116,5 +116,7 @@ export default function SignupContainer(props) {
     isValid,
     SignupError,
     loader,
+    setLoginForm,
+    LoginForm,
   });
 }

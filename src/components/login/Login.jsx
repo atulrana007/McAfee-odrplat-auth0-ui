@@ -14,6 +14,7 @@ const Login = (props) => {
     onToggle,
     validateEmail,
     getOtp,
+    LoginText,
   } = props;
   const trackClickEvent = async (navElement) => {
     let utag_data = window.utag_data;
@@ -35,6 +36,7 @@ const Login = (props) => {
             validateEmail={validateEmail}
             onSubmit={onSubmit}
             trackClickEvent={trackClickEvent}
+            LoginText={LoginText}
           />
         )}
 
@@ -48,6 +50,7 @@ const Login = (props) => {
             hideEmail={hideEmail}
             onSubmit={onSubmit}
             trackClickEvent={trackClickEvent}
+            LoginText={LoginText}
           />
         )}
       </form>
@@ -59,9 +62,12 @@ const Login = (props) => {
         <div className="Switch">{translate("or")}</div>
 
         {!switchLogin && (
-          <button className="SwitchBtn" onClick={onToggle}>
-            <div>{translate("Sign_in_with_a_onetime_passcode")}</div>
-          </button>
+          <>
+            <button className="SwitchBtn" onClick={onToggle}>
+              <div>{translate("Sign_in_with_a_onetime_passcode")}</div>
+            </button>
+            <div className="opt-info">{translate("we_will_send_otp")}</div>
+          </>
         )}
         {switchLogin && (
           <button className="SwitchBtn" onClick={onToggle}>

@@ -1,7 +1,8 @@
 import React from "react";
 import translate from "../../localization/translate";
 
-import { AiOutlineMail } from "react-icons/ai";
+import { ReactComponent as OutlineMail } from "../../svg/mailIcon.svg";
+import { ReactComponent as TickIcon } from "../../svg/tickIcon.svg";
 
 const PasswordLessFlow = (props) => {
   const {
@@ -13,6 +14,7 @@ const PasswordLessFlow = (props) => {
     hideEmail,
     onSubmit,
     trackClickEvent,
+    LoginText,
   } = props;
   return (
     <>
@@ -23,7 +25,7 @@ const PasswordLessFlow = (props) => {
               <div
                 className="LoginInputLabel"
                 style={{
-                  color: validateEmail(LoginForm.email) ? "green" : "red",
+                  color: validateEmail(LoginForm.email) ? "#0CA77D" : "red",
                 }}
               >
                 {translate("emailAddress")}
@@ -37,13 +39,13 @@ const PasswordLessFlow = (props) => {
                   LoginError.isEmailError === true
                     ? "2px solid red"
                     : validateEmail(LoginForm.email)
-                    ? "2px solid green"
+                    ? "2px solid #0CA77D"
                     : "",
                 backgroundColor: "#ffff",
                 borderRadius: "1rem",
               }}
             >
-              <AiOutlineMail
+              <OutlineMail
                 className="LoginInputLogo"
                 style={{
                   color: validateEmail(LoginForm.email) ? "green" : "",
@@ -58,6 +60,17 @@ const PasswordLessFlow = (props) => {
                 className="LoginInput"
                 onChange={onChange}
               />
+              {validateEmail(LoginForm.email) &&
+              LoginText.title === "Looks_like_you_already_have_an_account" ? (
+                <TickIcon
+                  style={{
+                    height: "2rem",
+                    width: "2rem",
+                    marginTop: "0.8rem",
+                    marginRight: "0.2rem",
+                  }}
+                />
+              ) : null}
             </div>
           </div>
         </div>
