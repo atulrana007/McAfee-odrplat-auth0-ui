@@ -26,6 +26,8 @@ const LoginUI = (props) => {
     otpTimer,
     otpValid,
     setOtpValid,
+    TimerState,
+    setTimer,
   } = props;
   const { setWhichPage } = useContext(AppContext);
   const { LoginText, setLoginText } = useContext(CommonDataContext);
@@ -41,7 +43,7 @@ const LoginUI = (props) => {
             <img
               alt="McAfeeLogo"
               className="loading-logo"
-              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-React-Appp/public/images/McAfee-Document-Logo.png"
+              src="https://cdn.jsdelivr.net/gh/atulrana007/McAfee-odrplat-auth0-ui/public/images/McAfee-Document-Logo1.png"
             />
             <div className="loading-text">{translate("Signing_you_in")}...</div>
             <CircularLoader />
@@ -58,7 +60,12 @@ const LoginUI = (props) => {
                   {translate(LoginText.subtitle)}
                 </div>
                 {otpTimer ? (
-                  <Timer initialMinute={3} setOtpValid={setOtpValid} />
+                  <Timer
+                    initialMinute={3}
+                    setOtpValid={setOtpValid}
+                    setTimer={setTimer}
+                    TimerState={TimerState}
+                  />
                 ) : null}
                 <div className="LoginBottomHeading">
                   <div>{translate("Do_not_have_an_account")}</div>

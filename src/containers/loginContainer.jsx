@@ -13,6 +13,12 @@ export default function LoginContainer(props) {
     databaseError: "",
     errorCode: "",
   });
+
+  const [TimerState, setTimer] = useState({
+    minutes: 3,
+    seconds: 0,
+  });
+
   const [otpTimer, setOtpTimer] = useState(false);
   const [switchLogin, setToggle] = useState(false);
 
@@ -164,6 +170,10 @@ export default function LoginContainer(props) {
     try {
       e.preventDefault();
       await otpStart(LoginForm.email);
+      setTimer({
+        minutes: 3,
+        seconds: 0,
+      });
       setOtpTimer(false);
       setOtpTimer(true);
       setOtpValid(true);
@@ -198,5 +208,7 @@ export default function LoginContainer(props) {
     otpTimer,
     otpValid,
     setOtpValid,
+    TimerState,
+    setTimer,
   });
 }

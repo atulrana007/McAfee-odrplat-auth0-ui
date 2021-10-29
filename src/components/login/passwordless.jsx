@@ -16,7 +16,6 @@ const PasswordLessFlow = (props) => {
     trackClickEvent,
     LoginText,
     otpValid,
-    setOtpValid,
   } = props;
   return (
     <>
