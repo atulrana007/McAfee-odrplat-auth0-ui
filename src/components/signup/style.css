@@ -13,7 +13,7 @@
   display: flex;
   margin-top: 2rem;
   flex-direction: row;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 18px;
   border: 1px solid RGB(212, 213, 219);
   color: RGB(38, 41, 77);
@@ -255,9 +255,9 @@
     flex: 1;
   }
   .formWrapper {
-    margin: 0rem 10rem;
+    margin: 0rem 5rem;
   }
   .InputWrapper {
-    margin-top: 86px;
+    margin-top: 4rem;
   }
 }

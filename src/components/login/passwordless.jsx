@@ -36,7 +36,7 @@ const PasswordLessFlow = (props) => {
                 border:
                   LoginError.isEmailError === true
                     ? "2px solid red"
-                    : LoginError.isEmailError === false
+                    : validateEmail(LoginForm.email)
                     ? "2px solid green"
                     : "",
                 backgroundColor: "#ffff",
