@@ -5,6 +5,7 @@ import translate from "../../localization/translate";
 
 const Timer = (props) => {
   const { initialMinute = 0, initialSeconds = 0 } = props;
+  const { setOtpValid } = props;
   const [minutes, setMinutes] = useState(initialMinute);
   const [seconds, setSeconds] = useState(initialSeconds);
   useEffect(() => {
@@ -14,6 +15,7 @@ const Timer = (props) => {
       }
       if (seconds === 0) {
         if (minutes === 0) {
+          setOtpValid(false);
           clearInterval(myInterval);
         } else {
           setMinutes(minutes - 1);
@@ -36,9 +38,13 @@ const Timer = (props) => {
         <div className="timer-active">
           {translate("Password_expired_in")}{" "}
           <span style={{ fontWeight: 700 }}>
-            {minutes === 0 && seconds > 0 ? seconds : minutes}
+            {minutes === 0 && seconds > 0
+              ? seconds
+              : minutes === initialMinute
+              ? minutes
+              : minutes + 1}
           </span>{" "}
-          {minutes === 0 && seconds > 0 ? "second" : "minutes"}
+          {minutes === 0 && seconds > 0 ? "seconds" : "minutes"}
         </div>
       )}
     </div>

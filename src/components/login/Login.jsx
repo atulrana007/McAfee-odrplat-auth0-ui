@@ -15,6 +15,8 @@ const Login = (props) => {
     validateEmail,
     getOtp,
     LoginText,
+    otpValid,
+    setOtpValid,
   } = props;
   const trackClickEvent = async (navElement) => {
     let utag_data = window.utag_data;
@@ -51,6 +53,8 @@ const Login = (props) => {
             onSubmit={onSubmit}
             trackClickEvent={trackClickEvent}
             LoginText={LoginText}
+            otpValid={otpValid}
+            setOtpValid={setOtpValid}
           />
         )}
       </form>

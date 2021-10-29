@@ -15,6 +15,8 @@ const PasswordLessFlow = (props) => {
     onSubmit,
     trackClickEvent,
     LoginText,
+    otpValid,
+    setOtpValid,
   } = props;
   return (
     <>
@@ -79,7 +81,10 @@ const PasswordLessFlow = (props) => {
 
       {LoginForm.otpAvailable && (
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div className="LoginInputContainer">
+          <div
+            className="LoginInputContainer"
+            style={{ border: `1px solid ${otpValid ? "#848faa" : "red"}` }}
+          >
             <div className="LoginInputLabel">
               {translate("one_time_passcode")}
             </div>

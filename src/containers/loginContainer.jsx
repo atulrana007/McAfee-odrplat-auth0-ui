@@ -5,6 +5,7 @@ export default function LoginContainer(props) {
   const [loader, setLoader] = useState(false);
   const { loginWithPassword, otpLogin, otpStart, getSocialLogin } =
     useContext(AccountContext);
+  const [otpValid, setOtpValid] = useState(true);
   const { LoginForm, setLoginForm } = useContext(CommonDataContext);
   const [LoginError, setLoginError] = useState({
     email: "",
@@ -114,12 +115,24 @@ export default function LoginContainer(props) {
     } else {
       try {
         if (LoginForm.otpAvailable) {
-          setLoader(true);
-          await otpLogin(LoginForm.email, LoginForm.otp);
-          setLoginForm({
-            ...LoginForm,
-            isSubmitting: false,
-          });
+          if (!otpValid) {
+            setLoginForm({
+              ...LoginForm,
+              isSubmitting: false,
+            });
+            setLoginError({
+              ...LoginError,
+              databaseError: "Otp has expired please resend the otp",
+              errorCode: "Otp has expired please resend the otp",
+            });
+          } else {
+            setLoader(true);
+            await otpLogin(LoginForm.email, LoginForm.otp);
+            setLoginForm({
+              ...LoginForm,
+              isSubmitting: false,
+            });
+          }
         } else {
           await otpStart(LoginForm.email);
           setOtpTimer(true);
@@ -151,6 +164,9 @@ export default function LoginContainer(props) {
     try {
       e.preventDefault();
       await otpStart(LoginForm.email);
+      setOtpTimer(false);
+      setOtpTimer(true);
+      setOtpValid(true);
     } catch (err) {
       console.log(err);
       setLoginError({
@@ -180,5 +196,7 @@ export default function LoginContainer(props) {
     hideEmail,
     setOtpTimer,
     otpTimer,
+    otpValid,
+    setOtpValid,
   });
 }

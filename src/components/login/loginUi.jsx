@@ -24,6 +24,8 @@ const LoginUI = (props) => {
     hideEmail,
     loader,
     otpTimer,
+    otpValid,
+    setOtpValid,
   } = props;
   const { setWhichPage } = useContext(AppContext);
   const { LoginText, setLoginText } = useContext(CommonDataContext);
@@ -55,7 +57,9 @@ const LoginUI = (props) => {
                 <div className="LoginIntroSubHeading">
                   {translate(LoginText.subtitle)}
                 </div>
-                {otpTimer ? <Timer initialMinute={3} /> : null}
+                {otpTimer ? (
+                  <Timer initialMinute={3} setOtpValid={setOtpValid} />
+                ) : null}
                 <div className="LoginBottomHeading">
                   <div>{translate("Do_not_have_an_account")}</div>
                   <div
@@ -88,6 +92,8 @@ const LoginUI = (props) => {
                 socialBtn={socialBtn}
                 hideEmail={hideEmail}
                 LoginText={LoginText}
+                otpValid={otpValid}
+                setOtpValid={setOtpValid}
               />
             </div>
           </div>
