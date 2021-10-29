@@ -1,10 +1,11 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useRef } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 
 import Authorize from "./components/Authorize";
 
 import Main from "./Main";
+import "./app.css";
+import Footer from "./components/Footer/Footer";
 
 import { AccountProvider } from "./providers/AccountContext";
 import LanguageProvider from "./localization/languageProvider";
@@ -50,13 +51,18 @@ const App = ({ pageConfig }) => {
       <AppProvider>
         <LanguageProvider locale={locale.current}>
           <AccountProvider config={pageConfig} locale={locale.current}>
-            <div id="app" className="d-flex flex-column h-100">
-              <Switch>
-                <Route path="/login" exact component={() => <Main />} />
-                <Route exact path="/authorize">
-                  <Authorize config={pageConfig} />
-                </Route>
-              </Switch>
+            <div className="Page-Container">
+              <div className="Content-Wrap">
+                <div id="app" className="d-flex flex-column h-100">
+                  <Switch>
+                    <Route path="/login" exact component={() => <Main />} />
+                    <Route exact path="/authorize">
+                      <Authorize config={pageConfig} />
+                    </Route>
+                  </Switch>
+                </div>
+              </div>
+              <Footer />
             </div>
           </AccountProvider>
         </LanguageProvider>

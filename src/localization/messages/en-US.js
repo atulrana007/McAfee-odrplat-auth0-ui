@@ -50,6 +50,10 @@ const en = {
       "Looks like you already have an account! Sign in now",
     This_email_already_exists:
       "This email address is already associated with a Mcafee account. Sign in to Continue",
+    contactUs: "Contact Us",
+    privacyNotice: "Privacy Notice",
+    If_you_didnt_receive_a_passcode: "If you didn't receive a passcode",
+    check_your_spam_folder: "check your spam folder.",
   },
 };
 export default en;

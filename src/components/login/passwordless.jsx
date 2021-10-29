@@ -106,8 +106,10 @@ const PasswordLessFlow = (props) => {
       {LoginForm.otpAvailable && (
         <div className="LoginOptMessageContainer">
           <div className="LoginOtpMessage">
-            <div>If you didn't receive a passcode,</div>
-            <div>check your spam folder.</div>
+            <div>
+              {translate("If_you_didnt_receive_a_passcode")} ,{" "}
+              {translate("check_your_spam_folder")}
+            </div>
           </div>
           <div className="ContactSupport">
             <div>Need Help?</div>

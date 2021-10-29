@@ -54,6 +54,10 @@ const fr = {
       "Il semble que vous ayez déjà un compte ! Connectez vous maintenant",
     This_email_already_exists:
       "Cette adresse e-mail est déjà associée à un compte Mcafee. Connectez-vous pour continuer.",
+    contactUs: "Contactez-nous",
+    privacyNotice: "avis de confidentialité",
+    If_you_didnt_receive_a_passcode: "Si vous n'avez pas reçu de code d'accès,",
+    check_your_spam_folder: "Vérifiez votre dossier courrier indésirable.",
   },
 };
 export default fr;
